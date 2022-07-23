@@ -14,7 +14,7 @@ public class movement : MonoBehaviour
     public GameObject player_look;
     public GameObject empty_obj;
     public Camera top_down_cam;
-    public DistanceJoint2D distance_joint;
+    //public DistanceJoint2D distance_joint;
     public GameObject find_pos;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,11 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (player_look != null)
+        {
+            top_down_cam.transform.position = find_pos.transform.position + new Vector3(0,0,-10);
+        }
+        
         if (Input.GetKey(up))
         {
             rb.AddForce(Vector2.up * speed * Time.deltaTime * 100);
