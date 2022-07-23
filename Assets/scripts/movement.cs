@@ -24,6 +24,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKey(up))
         {
             rb.AddForce(Vector2.up * speed * Time.deltaTime * 100);
